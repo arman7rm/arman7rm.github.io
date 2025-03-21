@@ -1,7 +1,7 @@
 :root {
   --red: #ed254e;
   --drkred: #a61c38;
-  --cerulean: #227c9d;
+  --cerulean: #3ea7ce;
   --sage: #d2cca1;
   --mntcream: #f4fffd;
   --oxfrdblue: #011936;
@@ -47,19 +47,31 @@ a:hover {
 
 /* intro section styling */
 #intro {
-  padding-bottom: 10rem;
+  width: 60%;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+
+hr {
+  margin: 0;
+  padding: 0.2rem;
+  background-color: var(--sage);
+  border-width: 0;
+}
 #intro p {
-  font-size: 1.2rem;
-  line-height: 1.5;
+  font-size: 1.4rem;
+  line-height: 1.7;
   color: var(--mntcream);
-  font-weight: 600;
+  font-weight: 400;
 }
 
 #intro .name {
   font-family: var(--chonburi);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--mntcream);
   font-weight: 700;
 }
@@ -67,15 +79,18 @@ a:hover {
 .name span {
   font-family: var(--asset);
   font-size: 4rem;
-  color: var(--red);
+  color: var(--sage);
   display: block;
+  padding: 1rem 0;
   font-weight: 300;
+  line-height: 1;
 }
 
 #intro h2 {
   font-size: 4rem;
-  color: var(--cerulean);
+  color: var(--red);
   font-weight: normal;
+  line-height: 1;
   font-family: var(--chonburi);
 }
 
@@ -88,11 +103,14 @@ a:hover {
   align-items: center;
   padding: 2rem 0rem;
   font-family: var(--chonburi);
+  color: var(--mntcream);
 }
 
 #contact a {
   color: var(--sage);
   font-family: var(--asset);
+  font-weight: 1000;
+  font-size: 2rem;
 }
 
 #contact a:hover {
@@ -112,8 +130,8 @@ a:hover {
 
 /* nav bar styling */
 nav {
-  background-color: var(--cerulean);
-  font-family: var(--urbanist);
+  background-color: var(--oxfrdblue);
+  font-family: var(--chon);
   font-size: 80%;
   padding: 1rem;
 }
@@ -130,22 +148,35 @@ nav ul {
 
 nav h1 {
   display: block;
-  font-size: 2rem;
 }
 
 nav h1 a {
-  font-family: var(--asset);
+  font-family: var(--urbanist);
+  font-size: 2rem;
+  font-weight: lighter;
+  color: var(--mntcream);
 }
-nav li:first-child{
-    flex-basis: 100%;
-    text-align: center;
+nav li:first-child {
+  flex-basis: 100%;
+  text-align: center;
 }
 nav a {
   text-decoration: none;
-  color: var(--mntcream);
+  color: var(--sage);
   display: block;
 }
 nav a:hover {
   text-decoration: overline;
   color: var(--oxfrdblue);
+}
+
+nav [class*="fa-"]{
+    font-size: 150%;
+    color: var(--cerulean);
+}
+
+nav h1 [class*="fa-"]{
+    font-size: 100%;
+    color: var(--cerulean);
+    padding: 0 0.5rem;
 }
