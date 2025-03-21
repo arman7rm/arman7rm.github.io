@@ -47,14 +47,12 @@ a:hover {
 
 /* intro section styling */
 #intro {
-  width: 60%;
   padding: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
 
 hr {
   margin: 0;
@@ -108,7 +106,7 @@ hr {
 
 #contact a {
   color: var(--sage);
-  font-family: var(--asset);
+  font-family: var(--chonburi);
   font-weight: 1000;
   font-size: 2rem;
 }
@@ -122,6 +120,7 @@ hr {
   margin: auto;
   padding: 1rem;
   text-align: center;
+  font-family: var(--urbanist);
 }
 
 #contact p:last-child {
@@ -162,21 +161,97 @@ nav li:first-child {
 }
 nav a {
   text-decoration: none;
-  color: var(--sage);
+  color: var(--mntcream);
   display: block;
 }
 nav a:hover {
   text-decoration: overline;
-  color: var(--oxfrdblue);
+  color: var(--red);
 }
 
-nav [class*="fa-"]{
-    font-size: 150%;
-    color: var(--cerulean);
+nav [class*="fa-"] {
+  font-size: 150%;
+  color: var(--cerulean);
+}
+nav [class*="fa-"]:hover {
+  color: var(--red);
 }
 
-nav h1 [class*="fa-"]{
-    font-size: 100%;
-    color: var(--cerulean);
-    padding: 0 0.5rem;
+nav h1 a:hover {
+  text-decoration: none;
+}
+
+nav h1 [class*="fa-"] {
+  font-size: 100%;
+  color: var(--cerulean);
+  padding: 0 0.5rem;
+}
+
+.button {
+  padding: 0.5rem;
+  background-color: var(--red);
+  border-radius: 5px;
+  font-weight: 700;
+  color: var(--mntcream);
+}
+
+.button:hover {
+  background-color: var(--drkred);
+  color: var(--mntcream);
+  text-decoration: none;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  gap: 1rem;
+}
+
+footer h2 {
+  font-family: var(--urbanist);
+}
+
+footer ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-flow: wrap;
+  gap: 3rem;
+  margin: 2rem 0;
+  padding: 0;
+  font-size: 3rem;
+}
+
+footer p {
+  font-size: 1.2rem;
+}
+
+footer li {
+  display: flex;
+}
+footer [class*="fa-"] {
+  font-size: 150%;
+  color: var(--cerulean);
+}
+
+footer [class*="fa-"]:hover {
+  color: var(--red);
+}
+
+@media (min-width: 850px) {
+  nav {
+    padding: 2rem 0rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  nav li:first-child {
+    flex-basis: auto;
+    text-align: left;
+    margin-right: auto;
+  }
 }
