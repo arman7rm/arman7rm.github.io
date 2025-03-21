@@ -1,0 +1,151 @@
+:root {
+  --red: #ed254e;
+  --drkred: #a61c38;
+  --cerulean: #227c9d;
+  --sage: #d2cca1;
+  --mntcream: #f4fffd;
+  --oxfrdblue: #011936;
+  --charcoal: #465362;
+  --font-size: 1.5rem;
+  --urbanist: "Urbanist", sans-serif;
+  --asset: "Asset", serif;
+  --chonburi: "Chonburi", serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--urbanist);
+  background-color: var(--oxfrdblue);
+  color: var(--mntcream);
+  font-size: var(--font-size);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+a {
+  color: var(--red);
+}
+
+a:hover {
+  color: var(--drkred);
+  text-decoration: none;
+}
+
+/* intro section styling */
+#intro {
+  padding-bottom: 10rem;
+}
+
+#intro p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--mntcream);
+  font-weight: 600;
+}
+
+#intro .name {
+  font-family: var(--chonburi);
+  font-size: 1.2rem;
+  color: var(--mntcream);
+  font-weight: 700;
+}
+
+.name span {
+  font-family: var(--asset);
+  font-size: 4rem;
+  color: var(--red);
+  display: block;
+  font-weight: 300;
+}
+
+#intro h2 {
+  font-size: 4rem;
+  color: var(--cerulean);
+  font-weight: normal;
+  font-family: var(--chonburi);
+}
+
+/* contact section styling */
+#contact {
+  background-color: var(--red);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0rem;
+  font-family: var(--chonburi);
+}
+
+#contact a {
+  color: var(--sage);
+  font-family: var(--asset);
+}
+
+#contact a:hover {
+  color: var(--cerulean);
+}
+
+#contact p {
+  width: 600px;
+  margin: auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+#contact p:last-child {
+  margin-top: 2rem;
+}
+
+/* nav bar styling */
+nav {
+  background-color: var(--cerulean);
+  font-family: var(--urbanist);
+  font-size: 80%;
+  padding: 1rem;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 2rem;
+}
+
+nav h1 {
+  display: block;
+  font-size: 2rem;
+}
+
+nav h1 a {
+  font-family: var(--asset);
+}
+nav li:first-child{
+    flex-basis: 100%;
+    text-align: center;
+}
+nav a {
+  text-decoration: none;
+  color: var(--mntcream);
+  display: block;
+}
+nav a:hover {
+  text-decoration: overline;
+  color: var(--oxfrdblue);
+}
