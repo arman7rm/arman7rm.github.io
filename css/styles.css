@@ -193,6 +193,7 @@ nav h1 [class*="fa-"] {
   border-radius: 5px;
   font-weight: 700;
   color: var(--mntcream);
+  text-decoration: none;
 }
 
 .button:last-child {
@@ -208,6 +209,11 @@ nav h1 [class*="fa-"] {
   background-color: var(--drkred);
   color: var(--mntcream);
   text-decoration: none;
+}
+
+article .button{
+  font-size: 1rem;
+  margin: 2rem 0rem;
 }
 
 footer {
@@ -272,7 +278,7 @@ footer [class*="fa-"]:hover {
 #projects h4{
   font-size: 1rem;
   font-family: var(--chonburi);
-  margin: 0;
+  margin: 1rem 0;
 }
 
 .darkbox{
@@ -295,18 +301,17 @@ footer [class*="fa-"]:hover {
 }
 
 #projects img{
-  border-radius: 10px;
+  border-radius: 25px;
   margin: 2rem 0 4rem 0;
-  border-left: 1px solid var(--red);
-  width: 600px;
+  border-left: 2px solid var(--red);
+  border-top: 2px solid var(--red);
+  padding: 1rem;
 }
 
-.left{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
 
+img{
+  width: 100%;
+}
 @media (min-width: 850px) {
   nav {
     padding: 3rem 0rem 1rem 0rem;
@@ -330,4 +335,48 @@ footer [class*="fa-"]:hover {
     justify-content: center;
     align-items: center;
   }
+}
+
+@media (min-width: 550px){ 
+  article{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1rem;
+
+  }
+  .text{
+    order: 2;
+    text-align: right;
+  }
+  #projects ul{
+    justify-content: flex-end;
+  }
+
+  #projects img{
+    grid-column: 1/6;
+    grid-row: 1/2;
+  }
+
+  #projects .text{
+    grid-column: 5/11;
+    grid-row:1/2;
+
+  }
+
+  #projects .text.middle{
+    text-align: left;
+    order: 1;
+    grid-column: 1/6;
+    grid-row:1/2;
+  }
+
+  #projects img.middle{
+    grid-column: 5/11;
+    grid-row:1/2;
+  }
+
+  #projects .text.text.middle ul{
+    justify-content: flex-start;
+  }
+
 }
