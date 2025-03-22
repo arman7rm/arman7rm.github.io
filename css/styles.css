@@ -1,7 +1,7 @@
 :root {
   --red: #ed254e;
   --drkred: #a61c38;
-  --cerulean: #3ea7ce;
+  --cerulean: #68c7ea;
   --sage: #d2cca1;
   --mntcream: #f4fffd;
   --oxfrdblue: #011936;
@@ -47,11 +47,9 @@ a:hover {
 
 /* intro section styling */
 #intro {
-  padding: 5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 3rem 1rem 6rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 hr {
@@ -65,12 +63,13 @@ hr {
   line-height: 1.7;
   color: var(--mntcream);
   font-weight: 400;
+  width: 70%;
 }
 
 #intro .name {
   font-family: var(--chonburi);
-  font-size: 1.3rem;
-  color: var(--mntcream);
+  font-size: 1.5rem;
+  color: var(--cerulean);
   font-weight: 700;
 }
 
@@ -79,7 +78,7 @@ hr {
   font-size: 4rem;
   color: var(--sage);
   display: block;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   font-weight: 300;
   line-height: 1;
 }
@@ -105,15 +104,13 @@ hr {
 }
 
 #contact a {
-  color: var(--sage);
-  font-family: var(--chonburi);
-  font-weight: 1000;
-  font-size: 2rem;
+  font-family: var(--urbanist);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.3rem;
+  padding: 1rem;
 }
 
-#contact a:hover {
-  color: var(--cerulean);
-}
 
 #contact p {
   width: 600px;
@@ -132,7 +129,7 @@ nav {
   background-color: var(--oxfrdblue);
   font-family: var(--chon);
   font-size: 80%;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 nav ul {
   display: flex;
@@ -195,6 +192,15 @@ nav h1 [class*="fa-"] {
   color: var(--mntcream);
 }
 
+.button:last-child{
+  background-color: var(--sage);
+  color: var(--oxfrdblue);
+}
+.button:last-child:hover{
+  background-color: var(--oxfrdblue);
+  color: var(--mntcream);
+}
+
 .button:hover {
   background-color: var(--drkred);
   color: var(--mntcream);
@@ -206,13 +212,14 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 4rem 0;
   text-align: center;
-  gap: 1rem;
+  gap: 1.3rem;
 }
 
 footer h2 {
   font-family: var(--urbanist);
+  font-size: 1.8rem;
 }
 
 footer ul {
@@ -222,13 +229,13 @@ footer ul {
   justify-content: center;
   flex-flow: wrap;
   gap: 3rem;
-  margin: 2rem 0;
+  margin: 1rem 0;
   padding: 0;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 footer p {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 footer li {
@@ -245,7 +252,7 @@ footer [class*="fa-"]:hover {
 
 @media (min-width: 850px) {
   nav {
-    padding: 2rem 0rem;
+    padding: 3rem 0rem 1rem 0rem;
     max-width: 1200px;
     margin: 0 auto;
   }
