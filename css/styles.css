@@ -1,10 +1,10 @@
 :root {
-  --red: #E63946;
+  --red: #e63946;
   --drkred: #a61c38;
-  --cerulean: #227C9D;
+  --cerulean: #227c9d;
   --sage: #d2cca1;
-  --mntcream: #F1FAEE;
-  --lghterblue: #457B9D;
+  --mntcream: #f1faee;
+  --lghterblue: #457b9d;
   --oxfrdblue: #011936;
   --charcoal: #465362;
   --font-size: 1.5rem;
@@ -55,11 +55,7 @@ a:hover {
 
 .gradient {
   height: 4px;
-  background: linear-gradient(
-    90deg,
-    var(--cerulean) 0%,
-    var(--sage) 100%
-  );
+  background: linear-gradient(90deg, var(--cerulean) 0%, var(--sage) 100%);
   border-width: 0;
 }
 #intro p {
@@ -211,7 +207,7 @@ nav h1 [class*="fa-"] {
   text-decoration: none;
 }
 
-article .button{
+article .button {
   font-size: 1rem;
   margin: 2rem 0rem;
 }
@@ -258,30 +254,37 @@ footer [class*="fa-"] {
 footer [class*="fa-"]:hover {
   color: var(--red);
 }
-.secondary-background{
+.secondary-background {
   background-color: var(--sage);
   color: var(--oxfrdblue);
 }
-#projects{
+#projects {
   padding: 4rem 1rem;
 }
 
-#projects h2{
+#projects h2, .container h2 {
   font-size: 2.5rem;
-  margin-bottom: calc(2.5rem*1.5);
+  margin-bottom: calc(2.5rem * 1.5);
 }
-
-#projects h3{
+.container h2{
+  color: var(--oxfrdblue);
+  font-family: var(--asset);
+}
+#projects h3 {
   color: var(--red);
 }
 
-#projects h4{
+#about h3 {
+  color: var(--oxfrdblue);
+}
+
+#projects h4, #about h4 {
   font-size: 1rem;
   font-family: var(--chonburi);
   margin: 1rem 0;
 }
 
-.darkbox{
+.darkbox {
   background-color: var(--oxfrdblue);
   color: var(--sage);
   border-radius: 10px;
@@ -290,7 +293,7 @@ footer [class*="fa-"]:hover {
   padding: 1rem;
 }
 
-#projects ul{
+#projects ul, #about ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -300,7 +303,7 @@ footer [class*="fa-"]:hover {
   font-size: 1rem;
 }
 
-#projects img{
+#projects img {
   border-radius: 25px;
   margin: 2rem 0 4rem 0;
   border-left: 2px solid var(--red);
@@ -308,10 +311,31 @@ footer [class*="fa-"]:hover {
   padding: 1rem;
 }
 
+#about img {
+  border-radius: 50px;
+  margin: 2rem 0 4rem 0;
+  border-left: 4px solid var(--sage);
+  border-top: 4px solid var(--sage);
+  padding: 1rem;
+}
 
-img{
+img {
   width: 100%;
 }
+
+#about {
+
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin:2rem auto;
+}
+
+.container {
+  padding: 6rem 1rem 6rem 1rem;
+  margin: 0 auto;
+  background-color: var(--red);
+}
+
 @media (min-width: 850px) {
   nav {
     padding: 3rem 0rem 1rem 0rem;
@@ -324,12 +348,17 @@ img{
     margin-right: auto;
   }
 
-  #projects{
+  #projects {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  #about {
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  .secondary-background{
+
+  .secondary-background {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -338,23 +367,23 @@ img{
 }
 
 @media (max-width: 450px) {
-  #intro .name span{
+  #intro .name span {
     font-size: 1.8rem;
   }
 
-  #intro .name{
+  #intro .name {
     font-size: 1.5rem;
   }
 
-  #intro h2{
+  #intro h2 {
     font-size: 3rem;
   }
 
-  #intro p{
+  #intro p {
     width: 100%;
   }
 
-  #contact p{
+  #contact p {
     width: 100%;
   }
 }
@@ -364,51 +393,69 @@ img{
     font-size: 2.3rem;
   }
 
-  #contact p{
+  #contact p {
     width: 100%;
   }
 }
 
-@media (min-width: 550px){ 
-  article{
+@media (min-width: 550px) {
+  article {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     gap: 1rem;
-
   }
-  .text{
+  .text {
     order: 2;
     text-align: right;
   }
-  #projects ul{
+  #projects ul {
     justify-content: flex-end;
   }
 
-  #projects img{
+  #about ul {
+    justify-content: flex-end;
+  }
+  #about article {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  #about img {
+    grid-column: 1/6;
+    grid-row: 1/5;
+  }
+
+  #about .text {
+    grid-column: 5/11;
+    grid-row: 2/4;
+    text-align: right;
+  }
+
+  #projects img {
     grid-column: 1/6;
     grid-row: 1/2;
   }
 
-  #projects .text{
+  #projects .text {
     grid-column: 5/11;
-    grid-row:1/2;
-
+    grid-row: 1/2;
   }
 
-  #projects .text.middle{
+  #projects .text.middle {
     text-align: left;
     order: 1;
     grid-column: 1/6;
-    grid-row:1/2;
+    grid-row: 1/2;
   }
 
-  #projects img.middle{
+  #projects img.middle {
     grid-column: 5/11;
-    grid-row:1/2;
+    grid-row: 1/2;
   }
 
-  #projects .text.text.middle ul{
+  #projects .text.text.middle ul {
     justify-content: flex-start;
   }
-
 }
