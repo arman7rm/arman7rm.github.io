@@ -290,7 +290,7 @@ footer [class*="fa-"]:hover {
   border-radius: 10px;
   font-size: 1rem;
   line-height: 1.5;
-  padding: 1rem;
+  padding: 1.3rem;
 }
 
 #projects ul, #about ul {
@@ -330,8 +330,9 @@ img {
   margin:2rem auto;
 }
 
+
 .container {
-  padding: 6rem 1rem 6rem 1rem;
+  padding: 2rem 1rem 2rem 1rem;
   margin: 0 auto;
   background-color: var(--red);
 }
@@ -385,6 +386,10 @@ img {
 
   #contact p {
     width: 100%;
+  }
+
+  #about h2{
+    font-size: 2rem;
   }
 }
 
