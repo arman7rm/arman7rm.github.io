@@ -349,11 +349,52 @@ img {
 
 
 .intro-2{
-  display: grid;
-  grid-template-columns: calc(8*1fr);
-  grid-template-rows: calc((5*1fr));
+  background-color: var(--mntcream);
   width: 100%;
   padding: 4rem 2rem;
+}
+
+.intro-2 h2{
+  color: var(--cerulean);
+  margin-left: 20%;
+  margin-bottom: 4rem;
+}
+
+.anamnesis{
+  color: #011936;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 15%;
+}
+
+.container-row{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.col{
+  width: 33%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.anamnesis .button{
+  background-color: var(--red);
+  margin: 1rem auto;
+}
+.container-col{
+  display: flex;
+  flex-direction: column;
+}
+
+.show-case-img{
+  padding: 2rem 0rem;
+  border-radius: 50px;
+  margin: 2rem 0 4rem 0;
+  border-left: 4px solid var(--oxfrdblue);
+  border-top: 4px solid var(--oxfrdblue);
+  padding: 1rem;
 }
 
 
