@@ -349,15 +349,17 @@ img {
 
 
 .intro-2{
-  background-color: var(--mntcream);
+  background-color: var(--sage);
   width: 100%;
   padding: 4rem 2rem;
 }
 
 .intro-2 h2{
-  color: var(--cerulean);
+  color: var(--red);
   margin-left: 20%;
   margin-bottom: 4rem;
+  font-family: var(--chonburi);
+  font-size: 4rem;
 }
 
 .anamnesis{
@@ -374,7 +376,7 @@ img {
 }
 .col{
   width: 33%;
-  text-align: center;
+  text-align: left;
   justify-content: center;
   align-items: center;
 }
@@ -389,7 +391,6 @@ img {
 }
 
 .show-case-img{
-  padding: 2rem 0rem;
   border-radius: 50px;
   margin: 2rem 0 4rem 0;
   border-left: 4px solid var(--oxfrdblue);
@@ -398,47 +399,44 @@ img {
 }
 
 
-@media (min-width: 850px) {
-  nav {
-    padding: 3rem 0rem 1rem 0rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  nav li:first-child {
-    flex-basis: auto;
-    text-align: left;
-    margin-right: auto;
-  }
-
-  #projects {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  #about {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-
-  .secondary-background {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
 @media (max-width: 450px) {
   #intro .name span {
     font-size: 1.8rem;
   }
-
+  .container-row{
+    flex-direction: column;
+  }
+  
+  .col{
+    width: 100%;
+  }
+  .show-case-img{
+    width: 350px;
+    margin: 0;
+  }
   #intro .name {
     font-size: 1.5rem;
   }
+  .intro-2{
+    padding: 2rem 0;
 
-  #intro h2 {
+  }
+  .intro-2 h2 {
     font-size: 3rem;
+    padding: 15px;
+    margin: 5px;
+  }
+
+  .intro-2 h3 {
+    margin: 5px 0px;
+  }
+
+  .anamnesis{
+    padding: 15px;
+  }
+
+  .anamnesis .button{
+    margin: 3rem auto;
   }
 
   #intro p {
@@ -454,6 +452,7 @@ img {
   }
 }
 
+
 @media (min-width: 450px) and (max-width: 700px) {
   #intro .name span {
     font-size: 2.3rem;
@@ -463,6 +462,7 @@ img {
     width: 100%;
   }
 }
+
 
 @media (min-width: 550px) {
   article {
@@ -525,3 +525,36 @@ img {
     justify-content: flex-start;
   }
 }
+
+@media (min-width: 850px) {
+  nav {
+    padding: 3rem 0rem 1rem 0rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  nav li:first-child {
+    flex-basis: auto;
+    text-align: left;
+    margin-right: auto;
+  }
+
+  #projects {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  #about {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+
+  .secondary-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+
