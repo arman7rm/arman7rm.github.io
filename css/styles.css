@@ -191,6 +191,10 @@ nav h1 [class*="fa-"] {
   color: var(--mntcream);
   text-decoration: none;
 }
+.resume-button:hover {
+  background-color: var(--cerulean);
+  color: var(--sage);
+}
 
 .button {
   padding: 0.5rem;
