@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+</head>
+<style>
+    body{
+        background-color: #82B2E8;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        margin: 10rem auto;
+    }
+
+    .day{
+        background-color:#82B2E8;
+    }
+
+    .night{
+        background-color: #211C84;
+    }
+    .temperature{
+        font-size: 2rem;
+        color: white;
+    }
+</style>
+<body>
+    <header>
+        <h1>Todays Weather:</h1>
+        <h2 class="city"></h2>
+        <h3 class="country"></h3>
+    </header>
+    <div class="main">
+        <p class="temperature">
+
+        </p>
+    </div>
+</body>
+
+<script>
+    const key = '34bee7b2c43b1da4c6b3052b7a6456f7';
+    const baseUrl = `http://api.weatherstack.com/current?access_key=${key}`;
+    const city = 'New York';
+    const locationParam = `&query=${city.replace(/ /g, '%20')}`;
+    const unitsParam = '&units=f';
+    
+    const url = baseUrl + locationParam + unitsParam;
+    async function getWeather(url){
+        let response = await fetch(url);
+        let body = await response.json();
+        let { name, country} = body.location;
+        let {temperature, weather_descriptions, feelslike,wind_speed, sunrise, sunset, is_day} = body.current;
+        return {temperature, weather_descriptions, feelslike,wind_speed, sunrise, sunset, is_day, name, country};
+    }
+    
+    (async function() {
+        const weatherData = await getWeather(url);
+        if(weatherData.is_day){
+            document.querySelector('body').classList.add("day");
+        }else{
+            document.querySelector('body').classList.add("night");
+        }
+
+        document.querySelector('.city').textContent = weatherData.name;
+        document.querySelector('.country').textContent = weatherData.country;
+        document.querySelector('.temperature').innerHTML = `Temperature: ${weatherData.temperature}&deg;F`;
+    })();
+
+</script>
+
+</html>
