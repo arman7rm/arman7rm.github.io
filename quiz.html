@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football IQ Test</title>
+</head>
+<style>
+    .main {
+        max-width: 1200px;
+        margin: 25px auto;
+    }
+
+    button {
+        width: 300px;
+    }
+
+    .container-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .correct {
+        background-color: green;
+    }
+
+    .incorrect {
+        background-color: red;
+    }
+
+    .question {
+        display: none;
+    }
+
+    .choices {
+        display: none;
+        list-style-type: lower-alpha;
+    }
+
+    .next {
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="container-col header">
+            <h1>Football IQ Test</h1>
+            <h2>Think you know football? Lets find out!</h2>
+        </div>
+        <div class="container-col">
+            <button class="begin-btn">Begin</button>
+            <div class="question">
+
+            </div>
+            <ul class="choices">
+
+            </ul>
+            <button class="next">Next</button>
+        </div>
+    </div>
+</body>
+<script>
+    const beginBtn = document.querySelector('.begin-btn');
+    const question = document.querySelector('.question');
+    const choices = document.querySelector('.choices');
+    let index = 0;
+    const nextbtn = document.querySelector('.next');
+    const bank = [
+        {
+            question: "Which team dominated European football during the early 2010s, winning two UEFA Champions League titles in 2009 and 2011?",
+            choices: ["Bayern Munich", "Real Madrid", "FC Barcelona", "Manchester United"],
+            answer: "FC Barcelona"
+        },
+        {
+            question: "Who was the key player for FC Barcelona during their dominant period in the 2010s, along with Xavi and Andrés Iniesta?",
+            choices: ["Luis Suárez", "Lionel Messi", "Neymar", "Sergio Ramos"],
+            answer: "Lionel Messi"
+        },
+        {
+            question: "Which player won multiple Ballon d'Or awards during the 2010s, including in 2013, 2014, 2016, and 2017?",
+            choices: ["Lionel Messi", "Neymar", "Cristiano Ronaldo", "Kylian Mbappé"],
+            answer: "Cristiano Ronaldo"
+        },
+        {
+            question: "Which club won the UEFA Champions League in 2013 and 2020, cementing its dominance in European football?",
+            choices: ["Paris Saint-Germain", "Bayern Munich", "Chelsea", "Juventus"],
+            answer: "Bayern Munich"
+        },
+        {
+            question: "What achievement did Bayern Munich complete in the 2020 UEFA Champions League, which made their victory even more remarkable?",
+            choices: ["They scored over 100 goals in the competition.", "They won every match in the tournament.", "They won the treble (Champions League, domestic league, and cup).", "They won their first-ever Champions League title."],
+            answer: "They won every match in the tournament."
+        },
+        {
+            question: "Which manager led Manchester City to their dominance in the Premier League during the 2010s?",
+            choices: ["José Mourinho", "Arsène Wenger", "Pep Guardiola", "Jürgen Klopp"],
+            answer: "Pep Guardiola"
+        },
+        {
+            question: "Which team won the UEFA Champions League title in 2012 with a dramatic victory over Bayern Munich in the final?",
+            choices: ["Chelsea", "Barcelona", "Real Madrid", "Juventus"],
+            answer: "Chelsea"
+        },
+        {
+            question: "Which country hosted the 2016 UEFA European Championship (Euro 2016)?",
+            choices: ["Spain", "Italy", "France", "Germany"],
+            answer: "France"
+        },
+        {
+            question: "Who was the star player for France during their 2018 FIFA World Cup victory?",
+            choices: ["Paul Pogba", "Kylian Mbappé", "N'Golo Kanté", "Antoine Griezmann"],
+            answer: "Kylian Mbappé"
+        },
+        {
+            question: "Which team did Cristiano Ronaldo join in 2018, after leaving Real Madrid?",
+            choices: ["Paris Saint-Germain", "Juventus", "Manchester City", "Bayern Munich"],
+            answer: "Juventus"
+        },
+    ];
+
+    const updateQuestion = () => {
+        index++;
+        question.innerHTML = `<p>${bank[index].question}</p>`;
+        choices.innerHTML = '';
+        bank[index].choices.forEach(choice => {
+            const li = document.createElement('li');
+            const btn = document.createElement('button');
+            btn.classList.add('choice');
+            btn.textContent = choice;
+            li.appendChild(btn);
+            choices.appendChild(li);
+            nextbtn.style.display = 'none';
+        });
+        document.querySelectorAll('.choice').forEach(c => {
+            c.addEventListener('click', submitQuestion)
+        })
+    }
+    const disableButtons = () => {
+        document.querySelectorAll('.choice').forEach(c => {
+            c.disabled = true;
+        })
+    };
+    const finish = () =>{
+
+    }
+    
+    const submitQuestion = (event) => {
+        const correct = bank[index].answer;
+        console.log(correct);
+        if (event.target.textContent === correct) {
+            event.target.classList.add('correct');
+        } else {
+            event.target.classList.add('incorrect');
+        }
+        disableButtons();
+        if(index<9){
+            nextbtn.style.display = 'block';
+        }else{
+            finish();
+        }
+    };
+
+    nextbtn.addEventListener('click', updateQuestion);
+
+
+
+
+    beginBtn.addEventListener("click", () => {
+        beginBtn.style.display = 'none';
+        question.style.display = 'block';
+        choices.style.display = 'block';
+        index = -1;
+        updateQuestion();
+    });
+
+
+
+
+</script>
+
+</html>
