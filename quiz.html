@@ -5,15 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football IQ Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Underdog&display=swap" rel="stylesheet">
 </head>
 <style>
+    body {
+
+        font-family: "Underdog", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-color: rgb(107, 0, 21);
+        color: bisque;
+    }
+
     .main {
         max-width: 1200px;
-        margin: 25px auto;
+        margin: 10rem auto;
     }
 
     button {
         width: 300px;
+        padding: 10px;
+        margin: 20px auto;
+        background-color: burlywood;
+        color: rgb(121, 0, 0);
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 20px;
+        border: 4px solid rgb(255, 255, 255); 
+    }
+    button:hover{
+        background-color: rgb(255, 161, 37);
+        color: white;
+        box-shadow: 0 0 10px rgb(255, 255, 255);
     }
 
     .container-col {
@@ -25,10 +50,12 @@
 
     .correct {
         background-color: green;
+        color: white;
     }
 
     .incorrect {
         background-color: red;
+        color: white;
     }
 
     .question {
@@ -37,16 +64,18 @@
 
     .choices {
         display: none;
-        list-style-type: lower-alpha;
+        list-style-type: none;
     }
 
     .next {
         display: none;
     }
-    .see-results{
+
+    .see-results {
         display: none;
     }
-    .result{
+
+    .result {
         display: none;
     }
 </style>
@@ -134,7 +163,7 @@
 
     const updateQuestion = () => {
         index++;
-        question.innerHTML = `<p>${index+1}. ${bank[index].question}</p>`;
+        question.innerHTML = `<p>${index + 1}. ${bank[index].question}</p>`;
         choices.innerHTML = '';
         bank[index].choices.forEach(choice => {
             const li = document.createElement('li');
@@ -154,7 +183,7 @@
             c.disabled = true;
         })
     };
-    const finish = () =>{
+    const finish = () => {
         console.log("we finsihed");
         question.style.display = 'none';
         choices.style.display = 'none';
@@ -163,10 +192,10 @@
         res.textContent = `You scored ${score}/10`;
         const main = document.querySelector('.quiz');
         const message = document.createElement('h2');
-        if(score>=7){
+        if (score >= 7) {
             message.textContent = "Congratulations! You Passed!";
             message.style.color = 'green';
-        }else{
+        } else {
             message.textContent = "Sorry, you didn't pass this time. Try Again!";
             message.style.color = 'red';
         }
@@ -183,9 +212,9 @@
             event.target.classList.add('incorrect');
         }
         disableButtons();
-        if(index<9){
+        if (index < 9) {
             nextbtn.style.display = 'block';
-        }else{
+        } else {
             seeResults.style.display = 'block';
         }
     };
@@ -202,9 +231,6 @@
         index = -1;
         updateQuestion();
     });
-
-
-
 
 </script>
 
