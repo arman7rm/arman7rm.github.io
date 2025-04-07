@@ -43,6 +43,12 @@
     .next {
         display: none;
     }
+    .see-results{
+        display: none;
+    }
+    .result{
+        display: none;
+    }
 </style>
 
 <body>
@@ -51,7 +57,7 @@
             <h1>Football IQ Test</h1>
             <h2>Think you know football? Lets find out!</h2>
         </div>
-        <div class="container-col">
+        <div class="container-col quiz">
             <button class="begin-btn">Begin</button>
             <div class="question">
 
@@ -60,6 +66,8 @@
 
             </ul>
             <button class="next">Next</button>
+            <button class="see-results">See Results</button>
+            <h2 class="result"></h2>
         </div>
     </div>
 </body>
@@ -68,7 +76,9 @@
     const question = document.querySelector('.question');
     const choices = document.querySelector('.choices');
     let index = 0;
+    let score = 0;
     const nextbtn = document.querySelector('.next');
+    const seeResults = document.querySelector('.see-results');
     const bank = [
         {
             question: "Which team dominated European football during the early 2010s, winning two UEFA Champions League titles in 2009 and 2011?",
@@ -124,7 +134,7 @@
 
     const updateQuestion = () => {
         index++;
-        question.innerHTML = `<p>${bank[index].question}</p>`;
+        question.innerHTML = `<p>${index+1}. ${bank[index].question}</p>`;
         choices.innerHTML = '';
         bank[index].choices.forEach(choice => {
             const li = document.createElement('li');
@@ -145,14 +155,30 @@
         })
     };
     const finish = () =>{
-
+        console.log("we finsihed");
+        question.style.display = 'none';
+        choices.style.display = 'none';
+        seeResults.style.display = 'none';
+        const res = document.querySelector('.result');
+        res.textContent = `You scored ${score}/10`;
+        const main = document.querySelector('.quiz');
+        const message = document.createElement('h2');
+        if(score>=7){
+            message.textContent = "Congratulations! You Passed!";
+            message.style.color = 'green';
+        }else{
+            message.textContent = "Sorry, you didn't pass this time. Try Again!";
+            message.style.color = 'red';
+        }
+        res.style.display = 'block';
+        main.appendChild(message);
     }
-    
+
     const submitQuestion = (event) => {
         const correct = bank[index].answer;
-        console.log(correct);
         if (event.target.textContent === correct) {
             event.target.classList.add('correct');
+            score++;
         } else {
             event.target.classList.add('incorrect');
         }
@@ -160,12 +186,12 @@
         if(index<9){
             nextbtn.style.display = 'block';
         }else{
-            finish();
+            seeResults.style.display = 'block';
         }
     };
 
     nextbtn.addEventListener('click', updateQuestion);
-
+    seeResults.addEventListener('click', finish);
 
 
 
