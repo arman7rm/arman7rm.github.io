@@ -5,38 +5,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Underdog&display=swap"
+        rel="stylesheet">
 </head>
 <style>
-    body{
+    body {
         background-color: #82B2E8;
         max-width: 1200px;
         display: flex;
         flex-direction: column;
         margin: 10rem auto;
+        font-family: "DynaPuff", system-ui;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-variation-settings:
+            "wdth" 100;
     }
 
-    .day{
-        background-color:#82B2E8;
+    .day {
+        background-color: #82B2E8;
     }
 
-    .night{
+    h1 {
+        font-size: 5rem;
+        color: #211C84;
+    }
+
+    .weather {
+        color: #4D55CC;
+    }
+
+    .night {
         background-color: #211C84;
     }
-    .temperature{
+
+    .temperature {
+        font-size: 4rem;
+        color: white;
+    }
+
+    .weatherimg {
+        width: 400px;
+    }
+
+    .visual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container-col {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .data {
+        width: 50%;
+    }
+
+    .desc {
         font-size: 2rem;
+        font-style: italic;
         color: white;
     }
 </style>
-<body>
-    <header>
-        <h1>Todays Weather:</h1>
-        <h2 class="city"></h2>
-        <h3 class="country"></h3>
-    </header>
-    <div class="main">
-        <p class="temperature">
 
-        </p>
+<body>
+
+    <div class="main container-row">
+        <div class="data container-col">
+            <header>
+                <h1>Todays <span class="weather">Weather:</span></h1>
+                <h2 class="city"></h2>
+                <h3 class="country"></h3>
+            </header>
+            <p class="temperature">
+            </p>
+            <p class="desc"></p>
+        </div>
+        <div class="visual">
+            <img class="weatherimg" src="" alt="">
+        </div>
     </div>
 </body>
 
@@ -46,27 +102,33 @@
     const city = 'New York';
     const locationParam = `&query=${city.replace(/ /g, '%20')}`;
     const unitsParam = '&units=f';
-    
+
     const url = baseUrl + locationParam + unitsParam;
-    async function getWeather(url){
+    async function getWeather(url) {
         let response = await fetch(url);
         let body = await response.json();
-        let { name, country} = body.location;
-        let {temperature, weather_descriptions, feelslike,wind_speed, sunrise, sunset, is_day} = body.current;
-        return {temperature, weather_descriptions, feelslike,wind_speed, sunrise, sunset, is_day, name, country};
+        let { name, country } = body.location;
+        let { temperature, weather_descriptions, feelslike, wind_speed, sunrise, sunset, is_day } = body.current;
+        return { temperature, weather_descriptions, feelslike, wind_speed, sunrise, sunset, is_day, name, country };
     }
-    
-    (async function() {
+
+    (async function () {
         const weatherData = await getWeather(url);
-        if(weatherData.is_day){
+        if (weatherData.is_day) {
             document.querySelector('body').classList.add("day");
-        }else{
+        } else {
             document.querySelector('body').classList.add("night");
         }
 
         document.querySelector('.city').textContent = weatherData.name;
         document.querySelector('.country').textContent = weatherData.country;
         document.querySelector('.temperature').innerHTML = `Temperature: ${weatherData.temperature}&deg;F`;
+        console.log(weatherData.weather_descriptions[0]);
+        if (weatherData.weather_descriptions[0] === 'Mist') {
+            document.querySelector('.weatherimg').src = "/img/rain.png";
+        }
+        document.querySelector('.desc').innerHTML = `Description: ${weatherData.weather_descriptions[0]}`;;
+
     })();
 
 </script>
