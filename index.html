@@ -10,6 +10,7 @@
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/90ad3f0578.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -28,7 +29,8 @@
             <li><a href="https://drive.google.com/file/d/1TXc95Q7FgBxpCgRo9yE0gDGv5j8EZzUG/view?usp=sharing" target="_blank" class="resume-button">Resume</a></li>
         </ul>
     </nav>
-    <section id="intro">
+    <section  data-aos="fade-down" data-aos-delay="300" data-aos-duration="1500" data-aos-easing="ease-out"
+    data-aos-once="false" id="intro">
         <p class="name">Hi, my name is <span class="intro-name">Mohamed Salam.</span></p>
         <h2>I'm a software engineer.</h2>
         <p>I specialize in full-stack development, with experience
@@ -41,17 +43,20 @@
     </section>
     <div class="gradient"></div>
     <div class="intro-2">
-        <h2>Featured Project</h2>
+        <h2 data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500" data-aos-easing="ease-out"
+        data-aos-once="false" id="intro">Featured Project</h2>
         <div class="anamnesis">
             <div class="container-col">
                 <div class="container-row">
-                    <div class="col">
+                    <div  data-aos="fade-right" data-aos-delay="300" data-aos-duration="1500" data-aos-easing="ease-out"
+                    data-aos-once="false"  class="col">
                         <h3>Judge’s Choice Winner of Rutgers Fall 2019 IT & Informatics Showcase </h3>
                         <p>Anamnesis is an alternative to stimulants to alleviate the symptoms of ADHD with
                             young
                             children. </p>
                     </div>
-                    <div class="col">
+                    <div  data-aos="fade-down" data-aos-delay="300" data-aos-duration="1500" data-aos-easing="ease-out"
+                    data-aos-once="false"  class="col">
                         <p>
                             From a field of 40 student team projects involving over 250 Information Technology
                             and
@@ -59,7 +64,8 @@
                             colleagues.
                         </p>
                     </div>
-                    <div class="col">
+                    <div  data-aos="fade-left" data-aos-delay="300" data-aos-duration="1500" data-aos-easing="ease-out"
+                    data-aos-once="false"  class="col">
                         <div class="container-col">
                             <p>
                                 Created using React and NodeJs, Express and FireBase.
@@ -70,7 +76,8 @@
                         </div>
                     </div>
                 </div>
-                <img class="show-case-img" src="img/anamnesis2-1.jpg" alt="">
+                <img  data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500" data-aos-easing="ease-out"
+                data-aos-once="false"  class="show-case-img" src="img/anamnesis2-1.jpg" alt="">
             </div>
         </div>
 
@@ -93,6 +100,16 @@
         <p>© 2025 Copyright Mohamed Salam. All Rights Reserved</p>
     </footer>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,       // Animation duration (ms)
+            easing: 'ease-in-out', // Easing type
+            once: true,          // Animate only once
+            mirror: false,       // Don't reverse on scroll up
+        });
+    </script>
 </body>
 
 </html>

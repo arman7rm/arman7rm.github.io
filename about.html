@@ -10,6 +10,7 @@
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/90ad3f0578.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -31,9 +32,11 @@
     <div class="gradient"></div>
     <div class="container">
         <section id="about">
-            <h2>About Mohamed Salam</h2>
+            <h2 data-aos="fade-down" data-aos-delay="300" data-aos-duration="1000" data-aos-easing="ease-out"
+            data-aos-once="false">About Mohamed Salam</h2>
             <article>
-                <div class="text">
+                <div data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000" data-aos-easing="ease-out"
+                data-aos-once="false" class="text">
                     <h3>Highlights</h3>
                     <p class="darkbox">
                         Hi, I’m Mohamed. I like to learn and solve problems. I have a Bachelor’s in Information
@@ -55,7 +58,8 @@
                         <li>.NET</li>
                     </ul>
                 </div>
-                <img src="img/bjjphoto.jpg" alt="">
+                <img data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000" data-aos-easing="ease-out"
+                data-aos-once="false" src="img/bjjphoto.jpg" alt="">
             </article>
         </section>
     </div>
@@ -76,7 +80,17 @@
         </ul>
         <p>© 2025 Copyright Mohamed Salam. All Rights Reserved</p>
     </footer>
-
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        AOS.init({
+          duration: 800,
+          easing: 'ease-in-out',
+          once: true,
+          mirror: false,
+        });
+      });
+    </script>
 </body>
 
 </html>

@@ -10,6 +10,7 @@
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/90ad3f0578.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -31,10 +32,13 @@
     <div class="gradient"></div>
     <div class="container">
         <section id="contact">
-            <h2>Contact Me</h2>
-            <p>I am always interested in hearing about new software development opportunities, working on cool projects, and
+            <h2 data-aos="fade-down" data-aos-delay="300" data-aos-duration="1000" data-aos-easing="ease-out"
+            data-aos-once="false">Contact Me</h2>
+            <p data-aos="fade-down" data-aos-delay="300" data-aos-duration="1000" data-aos-easing="ease-out"
+            data-aos-once="false">I am always interested in hearing about new software development opportunities, working on cool projects, and
                 building my network. </p>
-            <p><a class="button" href="mailto:arman97rm@gmail.com">Email Me!</a></p>
+            <p data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" data-aos-easing="ease-out"
+            data-aos-once="false"><a class="button" href="mailto:arman97rm@gmail.com">Email Me!</a></p>
         </section>
     </div>
     <div class="gradient"></div>
@@ -54,7 +58,16 @@
         </ul>
         <p>© 2025 Copyright Mohamed Salam. All Rights Reserved</p>
     </footer>
-
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,       // Animation duration (ms)
+            easing: 'ease-in-out', // Easing type
+            once: true,          // Animate only once
+            mirror: false,       // Don't reverse on scroll up
+        });
+    </script>
 </body>
 
 </html>

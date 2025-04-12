@@ -10,6 +10,7 @@
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/90ad3f0578.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -32,15 +33,22 @@
     <div class="gradient"></div>
     <div class="secondary-background">
         <section id="projects">
-            <h2>Projects that I am proud of</h2>
-            <h3 class="subheading">I built these projects for clients of mine and for personal fulfillment. I wanted to
-                gain a deep
-                understanding of Frontend principles and experience working with the foundations of the web: vanilla JS,
-                HTML5, CSS3. I also played around with some fun packages and libraries to make these applications more
-                interactive! I attempted to add as much documentation, unit and integration testing as I could.
-            </h3>
+            <div data-aos="fade-down" data-aos-delay="300" data-aos-duration="1500" data-aos-easing="ease-out"
+            data-aos-once="false">
+                <h2>Projects that I am proud of</h2>
+                <h3 class="subheading">I built these projects for clients of mine and for personal fulfillment. I wanted
+                    to
+                    gain a deep
+                    understanding of Frontend principles and experience working with the foundations of the web: vanilla
+                    JS,
+                    HTML5, CSS3. I also played around with some fun packages and libraries to make these applications
+                    more
+                    interactive! I attempted to add as much documentation, unit and integration testing as I could.
+                </h3>
+            </div>
             <article>
-                <div class="text">
+                <div class="text" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1500"
+                    data-aos-easing="ease-out" data-aos-once="false">
                     <h4>Health Care E-commerce Site</h4>
                     <h3>Eisler's Chemists</h3>
                     <p class="darkbox">
@@ -65,10 +73,12 @@
                         <li>SVG</li>
                     </ul>
                 </div>
-                <img src="img/eislerschemists.png" alt="">
+                <img data-aos="fade-right" data-aos-delay="300" data-aos-duration="1500" data-aos-easing="ease-out"
+                    data-aos-once="false" src="img/eislerschemists.png" alt="">
             </article>
             <article>
-                <div class="text middle">
+                <div data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000" data-aos-easing="ease-out"
+                    data-aos-once="false" class="text middle">
                     <h4>Home Health Care Services Site</h4>
                     <h3>KindCare Wellness</h3>
                     <p class="darkbox">
@@ -91,10 +101,12 @@
                         <Li>Grid</Li>
                     </ul>
                 </div>
-                <img class="middle" src="img/KindCareSite.png" alt="">
+                <img data-aos="fade-left" data-aos-delay="700" data-aos-duration="1000" data-aos-easing="ease-out"
+                    data-aos-once="false" class="middle" src="img/KindCareSite.png" alt="">
             </article>
             <article>
-                <div class="text">
+                <div class="text" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000"
+                    data-aos-easing="ease-out" data-aos-once="false">
                     <h4>Luxury Beauty Care E-commerce Site</h4>
                     <h3>The Madison Apothecary</h3>
                     <p class="darkbox">
@@ -119,10 +131,12 @@
                         <li>Ajax</li>
                     </ul>
                 </div>
-                <img src="img/themadisonapothecary.png" alt="">
+                <img data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000" data-aos-easing="ease-out"
+                    data-aos-once="false" src="img/themadisonapothecary.png" alt="">
             </article>
             <article>
-                <div class="text middle">
+                <div data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000" data-aos-easing="ease-out"
+                    data-aos-once="false" class="text middle">
                     <h4>Javascript Game</h4>
                     <h3>Wordle</h3>
                     <p class="darkbox">
@@ -145,7 +159,8 @@
                         <Li>Grid</Li>
                     </ul>
                 </div>
-                <img class="middle" src="img/wordle.png" alt="">
+                <img data-aos="fade-left" data-aos-delay="700" data-aos-duration="1000" data-aos-easing="ease-out"
+                    data-aos-once="false" class="middle" src="img/wordle.png" alt="">
             </article>
         </section>
     </div>
@@ -166,6 +181,16 @@
         </ul>
         <p>© 2025 Copyright Mohamed Salam. All Rights Reserved</p>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,       // Animation duration (ms)
+            easing: 'ease-in-out', // Easing type
+            once: true,          // Animate only once
+            mirror: false,       // Don't reverse on scroll up
+        });
+    </script>
 
 </body>
 
