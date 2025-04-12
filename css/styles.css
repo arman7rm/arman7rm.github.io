@@ -402,6 +402,14 @@ img {
   padding: 1rem;
 }
 
+.subheading{
+  font-size: 15;
+  font-weight: 300;
+}
+
+#projects h2{
+  font-weight: 300;
+}
 
 @media (max-width: 450px) {
   #intro .name span {
