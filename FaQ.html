@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #D4C1EC;
+    }
+
+    .test {
+        max-width: 1200px;
+        margin: 10rem auto;
+    }
+
+    .faq-component {
+        border-radius: 20px;
+        padding: 30px;
+        background-color: #9F9FED;
+        color: white;
+        border: 5px solid #736CED;
+    }
+
+    .faq-component h2 {
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .accordion-item {
+
+        border-radius: 20px;
+        border: 5px solid #D4C1EC;
+        margin: 5px;
+        padding: 10px;
+        cursor: pointer;
+        background-color: #4f4c86;
+        color: white;
+    }
+
+    .accordion-item.open {
+        background-color: #736CED;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="test">
+        <div class="test">
+            <div id="faq-1" class="faq-component"></div>
+            <div id="faq-2" class="faq-component"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const FAQ_1 = [
+        {
+            question: "How many bones does a cat have?",
+            answer: "A cat has 230 bones - 6 more than a human",
+        },
+        {
+            question: "How much do cats sleep?",
+            answer: "The average cat sleeps 12-16 hours per day",
+        }
+    ];
+
+    const FAQ_2 = [
+        {
+            question: "Why do dogs bark?",
+            answer: "Dogs bark to communicate different emotions.",
+        },
+        {
+            question: "How often should I walk my dog?",
+            answer: "At least twice a day is recommended.",
+        }
+    ];
+
+    function createFAQComponent(containerId, faqData) {
+        const container = document.getElementById(containerId);
+        container.innerHTML = `<h2>Frequently Asked Questions</h2><div class="accordion"></div>`;
+        const accordion = container.querySelector(".accordion");
+        let lastClicked = null;
+
+        faqData.forEach((item, index) => {
+            const box = document.createElement("div");
+            box.classList.add("accordion-item");
+            box.innerHTML = `<h3 class="question-${index}">${item.question}</h3>`;
+            box.innerHTML += `<p class="hidden answer-${index}">- ${item.answer}</p>`;
+            accordion.appendChild(box);
+
+            box.addEventListener("click", () => {
+                const currentAnswer = box.querySelector(`.answer-${index}`);
+                if (lastClicked && lastClicked !== currentAnswer) {
+                    lastClicked.classList.add("hidden");
+                }
+
+                if (currentAnswer === lastClicked) {
+                    currentAnswer.classList.toggle("hidden");
+                    lastClicked = currentAnswer.classList.contains("hidden") ? null : currentAnswer;
+                } else {
+                    currentAnswer.classList.remove("hidden");
+                    lastClicked = currentAnswer;
+                }
+            });
+        });
+    }
+
+    // Create two different FAQ components on the page
+    createFAQComponent("faq-1", FAQ_1);
+    createFAQComponent("faq-2", FAQ_2);
+
+</script>
+
+</html>
